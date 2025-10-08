@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Quick Inline Styles for Portfolio Gallery (Can Move to styles.css Later) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .project-item {
+            background: rgba(0,255,255,0.1); /* Cyan tint for creative projects */
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.3s;
+            text-align: center;
+            overflow: hidden;
+        }
+        .project-item:hover {
+            border-color: #FF00FF;
+            box-shadow: 0 0 20px #FF00FF;
+            transform: scale(1.02);
+        }
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+        .project-item:hover img {
+            transform: scale(1.05);
+        }
+        .project-item h4 {
+            color: #00FFFF;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .project-item p {
+            color: #FFFFFF;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .project-links {
+            margin-top: 1rem;
+        }
+        .project-link {
+            color: #00FF00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+        .project-link:hover {
+            text-shadow: 0 0 10px #00FF00;
+        }
+        .no-projects {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .project-item img { height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header) -->
+    <section class="page-header">
+        <h1>Portfolio</h1>
+        <p style="text-align: center;">Created Worlds: My Projects & Demos</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Portfolio Section (Neon-Gallery Layout - Auto-Centered via CSS) -->
+            <section class="section fade-in">
+                <h2 style="text-align: center;">Showcase of My Work</h2>
+                <p class="intro" style="text-align: center;">These are my hands-on projects in gaming and tech. From simple mods to web prototypes, each one levels up my skills. Click links to explore!</p>
+                
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid">
+                    <!-- Project 1 (Placeholder - Customize) -->
+                    <div class="project-item">
+                        <!-- image background here <img src="https://via.placeholder.com/300x200/00FFFF/000000?text=Game+Mod" alt="Game Mod Project"> -->
+                        <h4>First Project</h4>
+                        <p>Brief Description of my First Project</p>
+                        <p><strong>Tech:</strong> Language/Apps I used | <strong>Year:</strong> What year?</p>
+                        <div class="project-links">
+                           <!-- github link or something <a href="https://github.com/yourusername/mod-project" target="_blank" class="project-link">GitHub</a> -->
+                          <!-- project demo video <a href="https://example.com/demo" target="_blank" class="project-link">Live Demo</a> -->
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Placeholder - Web/App Focus) -->
+                    <div class="project-item">
+                        <!-- <img src="https://via.placeholder.com/300x200/FF00FF/000000?text=Web+Game" alt="Web Game Project"> -->
+                        <h4>Second Project</h4>
+                        <p>Brief Description of my Second Project</p>
+                        <p><strong>Tech:</strong> Language/Apps I used | <strong>Year:</strong> What year?</p>
+                        <div class="project-links">
+                        <!--- ""   <a href="https://github.com/yourusername/web-game" target="_blank" class="project-link">GitHub</a> -->
+                        <!--- ""  <a href="https://example.com/play" target="_blank" class="project-link">Play Now</a> -->
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Placeholder - Academic/Tech) -->
+                    <div class="project-item">
+                        <!-- <img src="https://via.placeholder.com/300x200/00FF00/000000?text=Tech+App" alt="Tech App Project"> -->
+                        <h4>Third Project</h4>
+                        <p>Brief Description of my Third Project.</p>
+                        <p><strong>Tech:</strong> Language/Apps I used | <strong>Year:</strong> What year?</p>
+                        <div class="project-links">
+                         <!-- ""   <a href="https://github.com/yourusername/stats-app" target="_blank" class="project-link">GitHub</a> -->
+                         <!-- ""  <a href="resume.pdf" target="_blank" class="project-link">View Code</a> -->
+                        </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together!</p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+    <script src="script.js"></script>
+</body>
+</html>

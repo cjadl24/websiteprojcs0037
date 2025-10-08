@@ -1,0 +1,448 @@
+/* ========================================
+   GLOBAL STYLES - Dark Gaming Theme
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ /* Body: Original Intense Neon Background */
+ body {
+     font-family: Arial, sans-serif;
+     background-image: url(bgpixel2.jpg);
+     background-position: center; 
+     background-attachment: fixed; 
+     color: #fff;
+     line-height: 1.6;
+     overflow-x: hidden;
+     position: relative;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+ }
+
+/* Ambient Neon Radials + CRT Grid (Original Flair) */
+ body::before {
+     content: '';
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: 
+         radial-gradient(ellipse 50% 50% at 20% 80%, 
+             rgba(0, 255, 0, 0.15) 0%,     /* Bright green neon spot */
+             transparent 70%),
+         radial-gradient(ellipse 40% 40% at 80% 30%, 
+             rgba(0, 255, 255, 0.12) 0%,   /* Cyan spot */
+             transparent 70%),
+         radial-gradient(ellipse 30% 30% at 50% 50%, 
+             rgba(255, 0, 255, 0.08) 0%,   /* Pink center */
+             transparent 70%);
+     z-index: -1;
+     pointer-events: none;
+     animation: neonPulse 4s ease-in-out infinite alternate;  /* Subtle global pulse - original dynamic */
+ }
+
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive;  /* Retro pixel font for headers */
+    color: #FF00FF;
+    text-shadow: 0 0 5px #00FFFF;  /* Subtle cyan glow on all headers */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ========================================
+   TOGGLE BUTTON - Hamburger for Sidebar
+   ======================================== */
+.toggle-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;  /* Highest - always on top */
+    background: rgba(0, 0, 0, 0.7);  /* Semi-transparent black */
+    border: 2px solid #00FF00;  /* Green border */
+    color: #00FF00;  /* Green icon */
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    border-color: #FF00FF;  /* Pink on hover */
+    box-shadow: 0 0 15px #FF00FF;  /* Glow */
+    transform: scale(1.1);  /* Slight enlarge */
+}
+
+.toggle-btn.active {
+    background: rgba(255, 0, 255, 0.3);  /* Pink bg when open */
+    border-color: #FF00FF;
+    color: #FF00FF;
+    transform: rotate(90deg);  /* Optional: Rotate to X-like */
+}
+
+/* ========================================
+   SIDEBAR - Sliding Left Menu (Clean Version)
+   ======================================== */
+ #sidebar {
+     position: fixed !important;
+     top: 0 !important;
+     left: -300px !important;
+     width: 300px !important;
+     height: 100vh !important;
+     background: linear-gradient(180deg, 
+         #0a0a0a, 
+         #1a1a2e,
+         rgba(0, 255, 255, 0.05)  /* Faint cyan bottom glow */
+     ) !important;
+     border-right: 3px solid #00FF00 !important;  /* Thicker border */
+     z-index: 1000 !important;
+     transition: left 0.3s ease !important;
+     padding: 1rem !important;
+     overflow-y: auto !important;
+     box-shadow: 
+         4px 0 20px rgba(0, 255, 0, 0.4),  /* Stronger outer green */
+         inset 0 0 30px rgba(0, 255, 255, 0.15) !important;  /* Inner cyan neon - BACK! */
+    }
+
+#sidebar.active {
+    left: 0 !important;  /* Slide in */
+    box-shadow: 4px 0 20px rgba(0, 255, 0, 0.5) !important;  /* Brighter glow when open */
+}
+
+.sidebar h3 {
+    color: #00FFFF !important;  /* Cyan title */
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px #00FFFF;  /* Glow */
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar li {
+    margin: 0.5rem 0;
+}
+
+#sidebar a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease !important;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.05);  /* Subtle base bg */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;  /* For emoji icons */
+}
+
+#sidebar a:hover, #sidebar a.active {
+    border-color: #00FFFF !important;  /* Cyan border */
+    background: rgba(0, 255, 255, 0.2) !important;
+    color: #00FFFF !important;
+    box-shadow: 0 0 10px #00FFFF;  /* Glow */
+    transform: translateX(3px);  /* Gentle slide on hover/active */
+}
+
+ #sidebar.active {
+     left: 0 !important;
+     box-shadow: 
+         4px 0 40px rgba(0, 255, 0, 0.6),  /* Brighter on open */
+         inset 0 0 40px rgba(0, 255, 255, 0.25) !important;  /* Enhanced inner glow */
+ }
+     
+/* Scan Line Animation (Subtle CRT Effect - Optional) */
+#sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00FF00, transparent);
+    animation: scan 2s linear infinite;
+    z-index: 1;
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ========================================
+   MAIN CONTENT AREA - Shifts on Sidebar Open
+   ======================================== */
+ #main {
+     margin-top: 40px !important;
+     transition: margin-left 0.3s ease !important;
+     padding: 2rem;
+     background: rgba(0, 0, 0, 0.3);  /* Semi-transparent overlay for neon depth */
+     border-radius: 10px;  /* Optional subtle rounding */
+     margin: 2rem auto;  /* Center on wide screens */
+     max-width: 1200px;  /* Container for content */
+     .content { background: rgba(0,255,0,0.1); padding: 2rem; border: 2px solid #00FF00; border-radius: 10px; box-shadow: 0 0 15px #00FF00; }
+     flex: 1;
+}
+     
+
+#main.shifted {
+    margin-left: 300px !important;  /* Shift right on desktop when sidebar open */
+}
+
+/* Hero Section */
+    .hero { 
+        height: 100vh; 
+        background: linear-gradient(45deg, #000, #00FFFF, #FF00FF, #00FF00, #000); 
+        background-size: 400% 400%; 
+        animation: neonPulse 4s ease infinite; 
+        position: relative; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        margin-top: 30px; /* Offset for fixed nav */
+        border: double 4px #00FF00;
+        border-radius: 10px;}
+
+    @keyframes neonPulse { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .hero::before { 
+        content: ''; 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; }
+    .hero-content { 
+        z-index: 1; 
+        position: relative; }
+    .logo { 
+        width: 250px; 
+        height: 250px; 
+        margin: auto; 
+        animation: glow 3s ease-in-out infinite alternate; 
+        fill: #00FFFF;
+        border: inset 2px #00FFFF;
+        border-radius: 10px }
+    @keyframes glow { from { filter: drop-shadow(0 0 5px #00FFFF); } to { filter: drop-shadow(0 0 20px #00FFFF); } }
+    .hero h1 { 
+        font-size: 2rem; 
+        margin-bottom: 1rem; 
+        color: #FF00FF; }
+    .bio { 
+        font-family: monospace; 
+        max-width: 800px; 
+        margin: 30px; 
+        padding: 0 1rem; 
+        font-size: 1.4rem; 
+        opacity: 0; animation: fadeIn 1s ease 1s forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    #particles { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        pointer-events: none; 
+        z-index: 0; }
+
+/* Sections & Cards (For Content Like Skills/Experience) */
+.section {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: #1a1a2e;  /* Dark navy */
+    padding: 1.5rem;
+    border: 1px solid #333;  /* Subtle border */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    border-color: #00FFFF;  /* Cyan on hover */
+    box-shadow: 0 0 15px #00FFFF;  /* Glow */
+    transform: translateY(-5px);  /* Lift effect */
+}
+
+.card h2 {
+    color: #00FF00;  /* Green subheaders */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p, .card ul {
+    color: #ccc;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.card li::before {
+    content: '⚡';  /* Emoji bullet */
+    position: absolute;
+    left: 0;
+    color: #00FFFF;
+}
+
+/* Progress Bars (For Skills Page) */
+.progress-bar {
+    background: #333;
+    height: 10px;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #00FF00, #00FFFF);  /* Green-to-cyan fill */
+    height: 100%;
+    transition: width 1s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00FFFF;
+}
+
+/* ========================================
+   FOOTER - Simple Bottom Bar
+   ======================================== */
+footer {
+    background: #111;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #00FF00;  /* Green top border */
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    color: #ccc;
+}
+
+footer a {
+    color: #00FFFF;  /* Cyan links */
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+footer a:hover {
+    text-shadow: 0 0 10px #00FFFF;
+    color: #FF00FF;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Mobile Adjustments
+   ======================================== */
+@media (max-width: 768px) {
+    /* Nav: Stack vertically */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+    
+    nav a {
+        padding: 0.75rem;
+        font-size: 1.1rem;  /* Bigger for taps */
+    }
+    
+    /* Toggle Button: Smaller positioning */
+    .toggle-btn {
+        top: 0.5rem !important;
+        left: 0.5rem !important;
+        font-size: 1.25rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    /* Sidebar: Full-width overlay */
+    #sidebar {
+        left: -100% !important;
+        width: 100% !important;
+        padding: 1rem !important;
+    }
+    
+    #sidebar.active {
+        left: 0 !important;
+    }
+    
+    #sidebar h3 {
+        font-size: 1rem;
+    }
+    
+    #sidebar a {
+        padding: 1rem;
+        font-size: 1.1rem;  /* Bigger for mobile */
+    }
+    
+    /* Main: No shift, dim overlay instead */
+    #main.shifted {
+        margin-left: 0 !important;
+        opacity: 0.7 !important;
+        backdrop-filter: blur(3px);  /* Frosted effect */
+        padding: 1rem;  /* Less padding on small screens */
+    }
+    
+    /* Hero: Compact */
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Sections: Single column */
+    .section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    /* Footer: Full width */
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   ADDITIONAL UTILITIES - Optional Enhancements
+   ======================================== */
+/* Hide elements on mobile/desktop if needed */
+.mobile-only { display: none; }
+@media (max-width: 768px) { .mobile-only { display: block; } .desktop-only { display: none; } }
+
+/* Smooth scrolling for anchors */
+html { scroll-behavior: smooth; }
+
+/* Print styles (For resumes) */
+@media print {
+    nav, .toggle-btn, #sidebar { display: none; }
+    body { background: white; color: black; }
+    .hero, .card { border: 1px solid black; box-shadow: none; }
+}

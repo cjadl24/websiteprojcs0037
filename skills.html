@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Quick Inline Styles for Progress Bars (Can Move to styles.css Later) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .skill-item {
+            background: rgba(255,0,255,0.1);
+            border: 1px solid #FF00FF;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .skill-item:hover {
+            border-color: #00FFFF;
+            box-shadow: 0 0 15px #00FFFF;
+            transform: translateY(-3px);
+        }
+        .skill-item h4 {
+            color: #00FF00;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+            box-shadow: inset 0 0 5px #000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00FF00, #00FFFF);
+            border-radius: 5px;
+            width: 0%; /* Starts at 0, animates via JS */
+            transition: width 1.5s ease-in-out;
+            box-shadow: 0 0 10px #00FF00;
+        }
+        .skill-level {
+            color: #FF00FF;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header) -->
+    <section class="page-header">
+        <h1>Skills & Abilities</h1>
+        <p style="text-align: center;">Ability Upgrades: My Tech & Gaming Skill Tree</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Skills Section (Neon-Grid Layout - Auto-Centered via CSS) -->
+            <section class="section fade-in">
+                <h2 style="text-align: center;">Core Competencies</h2>
+                <p class="intro" style="text-align: center;">I've powered up in tech and gaming. These are my key abilities—honed through projects, play, and practice. Progress bars show self-assessed levels!</p>
+                
+                <!-- Skills Grid -->
+                <div class="skills-grid">
+                    <!-- Technical Skills -->
+                    <div class="skill-item">
+                        <h4>HTML/CSS/JavaScript</h4>
+                        <p>Building interactive web experiences, like this site!</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="50"></div>
+                        </div>
+                        <span class="skill-level">50% - Intermediate</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Game Modding & Scripting</h4>
+                        <p>Customizing games with Lua/Python in tools like Unity.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="20"></div>
+                        </div>
+                        <span class="skill-level">20% - Beginner</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Game Strategy & Analysis</h4>
+                        <p>Mastering tactics in RTS/MOBA games; applies to problem-solving.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="95"></div>
+                        </div>
+                        <span class="skill-level">95% - Expert</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Hardware/Tech Setup</h4>
+                        <p>Optimizing PCs for gaming; basic troubleshooting.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="90"></div>
+                        </div>
+                        <span class="skill-level">90% - Expert</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Teamwork & Communication</h4>
+                        <p>From multiplayer games to group projects.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                        </div>
+                        <span class="skill-level">85% - Advanced </span>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Creative Problem-Solving</h4>
+                        <p>Debugging code or adapting in-game strategies.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="70"></div>
+                        </div>
+                        <span class="skill-level">70% - Proficient </span>
+                </div>
+
+                <!-- Optional: Add More Categories -->
+                <!-- E.g., <div class="skill-item"> for Python, Git, etc. -->
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together!</p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+    <script src="script.js"></script>
+    <script>
+        // Simple JS for Progress Bar Animation (Runs on Load)
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.progress-fill').forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 500); // Delay for fade-in effect
+            });
+        });
+    </script>
+</body>
+</html>

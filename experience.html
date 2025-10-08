@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header - Student Theme) -->
+    <section class="page-header">
+        <h1>Adventures</h1>
+        <p style="text-align: center;">Leveling Up Through Games, Tech, and Projects</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Experience Section (Neon-Carded Layout - Auto-Centered via CSS) -->
+            <section class="section fade-in">
+                <h2 style="text-align: center;">My Journey So Far</h2>
+                <p class="intro" style="text-align: center;">As I am still a student, I'm grinding through academic quests and personal side missions in gaming and tech. From being a hardcore gamer to building apps, here's what I've unlocked so far!</p>
+                
+                <!-- Student Project Card 1 (Placeholder - Customize) -->
+                <div class="card">
+                    <h3>Video Game Experiences</h3>
+                    <p><strong>Type:</strong> Hobby</p>
+                    <p><strong>Description:</strong> I was a good player for video games like Valorant, or any other FPS Games</p>
+                    <p><strong>Achievements:</strong> Top 1000 in SEA Server, and have played with pro players.</p>
+                    <p><strong>Skills Gained:</strong> Teamwork, Communication, Strategy, Critical Thinking</p>
+                </div>
+
+                <!-- Student Project Card 2 (Placeholder - Academic Focus) -->
+                <div class="card">
+                    <h3>The Odin Project</h3>
+                    <p><strong>Type:</strong> Free Open Source Coding Curriculum </p>
+                    <p><strong>Dates:</strong> 2022</p>
+                    <p><strong>Description:</strong> Experienced how to build a html from scratch using the path from the course itself.</p>
+                    <p><strong>Skills Gained:</strong> HTML Coding, CSS Design</p>
+                </div>
+
+                <!-- Optional: Future Goals or Summary Card -->
+                <div class="card">
+                    <h3>Next Level Goals</h3>
+                    <ul>
+                        <li>Seeking internships in game dev or tech support</li>
+                        <li>Building more projects: A full indie/horror game or AI bot for gaming</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together!</p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+    <script src="script.js"></script>
+</body>
+</html>

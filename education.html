@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header Instead of Full Hero) -->
+    <section class="page-header">
+        <h1>Academic Quest</h1>
+        <p style="text-align: center;">My Journey Through Knowledge Levels</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Education Section (Neon-Carded Layout) -->
+            <section class="section fade-in">
+                <h2 style="text-align: center;">Level</h2>
+                <p class="intro" style="text-align: center;">Here's where I powered up my skills through formal education. Each milestone unlocked new abilities preparing for my professional journey.</p>
+                
+                <!-- Education Card 1 (Placeholder - Customize) -->
+                <div class="card">
+                    <h3>Primary</h3>
+                    <p><strong>School:</strong> Lucas R. Pascual Memorial Elementary School</p>
+                    <p><strong>Dates:</strong> 2006 - 2012 </p>
+                </div>
+
+                <!-- Education Card 2 (Placeholder - Add More as Needed) -->
+                <div class="card">
+                    <h3>Secondary</h3>
+                    <p><strong>School:</strong> College of St. Catherine & University of the East Caloocan</p>
+                    <p><strong>Dates:</strong> 2013 - 2019</p>
+                    <p><strong>Senior High Strand:</strong> ABM</p>
+                </div>
+
+                <div class="card">
+                    <h3>Tertiary</h3>
+                    <p><strong>Institution:</strong> FEU Tech</p>
+                    <p><strong>Dates:</strong> 2022 - 20**</p>
+                    <p><strong>Focus:</strong> Software Engineering, Game Development</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together!</p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+    <script src="script.js"></script>
+</body>
+</html>

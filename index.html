@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header Instead of Full Hero) -->
+    <section class="page-header">
+        <h1 id="hero-title" style="color: #FF00FF">Welcome to My Professional Website</h1>
+    </section>
+
+    <!-- Hero Section (Full-Screen Intro with Video Game Theme) -->
+    <section class="hero">
+        <canvas id="particles"></canvas>
+        <div class="hero-content">
+            <!-- Personal Logo (SVG - Customizable) -->
+            <img src="logo.png" class="logo" alt="My Logo">
+                <circle cx="50" cy="50" r="20" fill="#00FF00"/>
+            </img>
+            <!-- Hero Title (Typing Animation via JS) -->
+            <p class="bio" id="bio-text">Hi, I'm Clarence John De Leon, an aspiring game developer.</p>
+        </div>
+    </section>
+
+    <!-- Main Content (Below Hero) -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Bio Note/Introduction Section (Expands on Hero) -->
+            <section class="section intro-section fade-in">
+                <h2>Bio Note</h2>
+                <p>I'm a passionate professional blending real-world skills with video game creativity. From coding quests to advocacy missions, let's level up together!</p>
+                <!-- Add more details here, e.g., contact info or quick links -->
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together! </p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+<script src="script.js"></script>
+</body>
+</html>

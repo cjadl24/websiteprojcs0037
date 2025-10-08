@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Quick Inline Styles for Advocacy Cards (Can Move to styles.css Later) */
+        .advocacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .advocacy-item {
+            background: rgba(255,255,0,0.1); /* Yellow tint for advocacy energy */
+            border: 2px solid #FFFF00;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .advocacy-item:hover {
+            border-color: #FF00FF;
+            box-shadow: 0 0 20px #FF00FF;
+            transform: translateY(-5px);
+        }
+        .advocacy-item::before {
+            content: '⚡';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .advocacy-item h4 {
+            color: #FFFF00;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .advocacy-item p {
+            color: #FFFFFF;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .advocacy-link {
+            color: #00FF00;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        .advocacy-link:hover {
+            text-shadow: 0 0 10px #00FF00;
+        }
+        .no-advocacy {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .advocacy-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header) -->
+    <section class="page-header">
+        <h1>Advocacy & Causes</h1>
+        <p style="text-align: center;">Fighting the Good Fight: My Passions Beyond the Screen</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Advocacy Section (Neon-Grid Layout - Auto-Centered via CSS) -->
+            <section class="section fade-in">
+                <h2 style="text-align: center;">Issues I Care About</h2>
+                <p class="intro" style="text-align: center;">As a gaming and tech enthusiast, I believe in using my passions to make a difference. From promoting inclusive gaming to supporting student access to tech, here's what drives me. (Emerging advocate—more to come!)</p>
+                
+                <!-- Advocacy Grid -->
+                <div class="advocacy-grid">
+                    <!-- Cause 1 (Placeholder - Customize) -->
+                    <div class="advocacy-item">
+                        <h4>Inclusive Gaming Communities</h4>
+                        <p>Advocating for diverse and welcoming spaces in esports and online gaming, especially for underrepresented students.</p>
+                    </div>
+
+                    <!-- Cause 2 (Placeholder - Tech Access) -->
+                    <div class="advocacy-item">
+                        <h4>Tech Access for Students</h4>
+                        <p>Believing every student should have tools for coding and gaming—pushing for better resources in education.</p>
+                    </div>
+
+                    <!-- Cause 3 (Placeholder - Mental Health in Gaming) -->
+                    <div class="advocacy-item">
+                        <h4>Gaming for Mental Wellness</h4>
+                        <p>Highlighting how games can reduce stress and build skills, while addressing toxic behaviors in communities.</p>
+                    </div>
+
+                    <!-- Add More Causes Here -->
+                    <!-- E.g., <div class="advocacy-item"> for environmental tech or student rights -->
+                </div>
+
+                <!-- If No Advocacy Yet: Optional Placeholder -->
+                <!-- <div class="no-advocacy">Building my advocacy journey—passionate about gaming equity. Stay tuned!</div> -->
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together!</p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Leon's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Quick Inline Styles for Cert Badges (Can Move to styles.css Later) */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .cert-item {
+            background: rgba(0,255,0,0.1);
+            border: 2px solid #00FF00;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .cert-item:hover {
+            border-color: #FF00FF;
+            box-shadow: 0 0 20px #FF00FF;
+            transform: scale(1.05);
+        }
+        .cert-item::before {
+            content: '🏆';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .cert-item h4 {
+            color: #00FFFF;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .cert-item p {
+            color: #FFFFFF;
+            margin: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .cert-link {
+            color: #00FF00;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        .cert-link:hover {
+            text-shadow: 0 0 10px #00FF00;
+        }
+        .no-certs {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .certs-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Button for Sidebar -->
+    <button class="toggle-btn">☰</button>
+
+    <!-- Sidebar (Hidden by Default, Toggles with JS) -->
+    <aside class="sidebar" id="sidebar">
+        <h3>Game Menu</h3>
+        <ul id="sidebar-menu">
+            <!-- Dynamically populated by JS -->
+        </ul>
+    </aside>
+
+    <!-- Page Header (Simplified Gradient Header) -->
+    <section class="page-header">
+        <h1>Certifications & Badges</h1>
+        <p style="text-align: center;">Achievement Unlocks: Verified Power-Ups</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="content">
+            <!-- Certifications Section (Neon-Grid Layout - Auto-Centered via CSS) -->
+            <section class="section fade-in">
+                <h2 style="text-align: center";>Completed Courses & Credentials</h2>
+                <p class="intro" style="text-align: center;">I'm collecting badges from online platforms and courses to boost my tech and gaming toolkit. These are my unlocked achievements—links to verify!</p>
+                
+                <!-- Certifications Grid -->
+                <div class="certs-grid">
+                    <!-- Cert 1 (Placeholder - Customize) -->
+                    <div class="cert-item">
+                        <h4>Introduction to Cybersecurity</h4>
+                        <p><strong>Instructor:</strong> Alejandro Legaspi</p>
+                        <p><strong>Date:</strong> October 07, 2025</p>
+                        <p><strong>Focus:</strong> Explore the exciting field of cybersecurity and why cybersecurity is a future-proof career.</p>
+                        <a href="itc-cert.pdf" target="_blank" class="cert-link">View Certificate</a>
+                    </div>
+
+                    <!-- Add More Certs Here -->
+                    <!-- E.g., <div class="cert-item"> for AWS, Microsoft, or gaming certs -->
+                </div>
+
+                <!-- If No Certs Yet: Optional Placeholder -->
+                <!-- <div class="no-certs">Building my collection—check back for updates! In the meantime, explore my skills and projects.</div> -->
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer with Copyright -->
+    <footer>
+        <p>&copy; <span id="year"></span> 2025 Clarence John De Leon. All rights reserved. | Let's grind together!</p>
+    </footer>
+
+    <!-- Link to External JS (Loads at End for Better Performance) -->
+    <script src="script.js"></script>
+</body>
+</html>
